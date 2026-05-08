@@ -16,7 +16,7 @@
 ### Clone Repository
 
 ```bash
-git clone <repo_link>
+git clone  https://github.com/rithikcr-mb/binance-futures-trading-bot.git
 cd trading_bot
 ```
 
@@ -79,4 +79,4 @@ python cli.py --symbol BTCUSDT --side SELL --type LIMIT --quantity 0.001 --price
 
 ### LIMIT Order
 
-![Limit Order](screenshots/limit_order.png)
+![Limit Order](screenshots/limil_order.png)
