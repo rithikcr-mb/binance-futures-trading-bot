@@ -18,3 +18,23 @@
 2026-05-08 17:10:34,935 - INFO - Placing order | Symbol=BTCUSDT | Side=SELL | Type=MARKET | Qty=0.001 | Price=None
 2026-05-08 17:10:37,857 - INFO - Order Response: {'orderId': 13120560683, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ8302d8d0ffd0089b7b1ff8', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1778240437712}
 2026-05-08 17:10:37,861 - INFO - Order placed successfully
+2026-05-08 17:43:08,647 - INFO - Binance Futures Testnet Client initialized
+2026-05-08 17:43:08,647 - INFO - Placing order | Symbol=BTCUSDT | Side=BUY | Type=LIMIT | Qty=0.006 | Price=500.0
+2026-05-08 17:43:09,377 - ERROR - Binance API Error: APIError(code=-4164): Order's notional must be no smaller than 50 (unless you choose reduce only).
+2026-05-08 17:43:09,381 - ERROR - CLI Error: APIError(code=-4164): Order's notional must be no smaller than 50 (unless you choose reduce only).
+2026-05-08 17:48:23,633 - INFO - Binance Futures Testnet Client initialized
+2026-05-08 17:48:23,633 - INFO - Placing order | Symbol=BTCUSDT | Side=BUY | Type=MARKET | Qty=0.003 | Price=None
+2026-05-08 17:48:25,746 - INFO - Order Response: {'orderId': 13120643129, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJb3d5c28cb2e36ea5278a71', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.0030', 'executedQty': '0.0000', 'cumQty': '0.0000', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1778242705541}
+2026-05-08 17:48:25,751 - INFO - Order placed successfully
+2026-05-08 17:50:06,096 - INFO - Binance Futures Testnet Client initialized
+2026-05-08 17:50:06,096 - INFO - Placing order | Symbol=BTCUSDT | Side=SELL | Type=LIMIT | Qty=0.004 | Price=50000.0
+2026-05-08 17:50:07,084 - ERROR - Binance API Error: APIError(code=-4024): Limit price can't be lower than 76263.28.
+2026-05-08 17:50:07,087 - ERROR - CLI Error: APIError(code=-4024): Limit price can't be lower than 76263.28.
+2026-05-08 17:50:39,596 - INFO - Binance Futures Testnet Client initialized
+2026-05-08 17:50:39,597 - INFO - Placing order | Symbol=BTCUSDT | Side=SELL | Type=LIMIT | Qty=0.001 | Price=50000.0
+2026-05-08 17:50:40,456 - ERROR - Binance API Error: APIError(code=-4024): Limit price can't be lower than 76257.19.
+2026-05-08 17:50:40,458 - ERROR - CLI Error: APIError(code=-4024): Limit price can't be lower than 76257.19.
+2026-05-08 17:52:05,895 - INFO - Binance Futures Testnet Client initialized
+2026-05-08 17:52:05,895 - INFO - Placing order | Symbol=BTCUSDT | Side=SELL | Type=LIMIT | Qty=0.001 | Price=80000.0
+2026-05-08 17:52:07,080 - INFO - Order Response: {'orderId': 13120651576, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ5fd273663d69302cdfc489', 'price': '80000.00', 'avgPrice': '0.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1778242927033}
+2026-05-08 17:52:07,086 - INFO - Order placed successfully

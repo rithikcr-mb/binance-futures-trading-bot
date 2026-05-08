@@ -70,3 +70,13 @@ python cli.py --symbol BTCUSDT --side SELL --type LIMIT --quantity 0.001 --price
 - User already has Binance Futures Testnet account
 - API keys are valid
 - Binance Futures Testnet is active
+
+## Screenshots
+
+### MARKET Order
+
+![Market Order](screenshots/market_order.png)
+
+### LIMIT Order
+
+![Limit Order](screenshots/limit_order.png)
