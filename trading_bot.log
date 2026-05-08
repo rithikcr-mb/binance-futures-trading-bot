@@ -1,0 +1,20 @@
+2026-05-08 16:23:25,773 - INFO - Binance Futures Testnet Client initialized
+2026-05-08 16:23:25,773 - INFO - Placing order | Symbol=BTCUSDT | Side=BUY | Type=MARKET | Qty=0.001 | Price=None
+2026-05-08 16:23:26,400 - ERROR - Binance API Error: APIError(code=-2014): API-key format invalid.
+2026-05-08 16:23:26,400 - ERROR - CLI Error: APIError(code=-2014): API-key format invalid.
+2026-05-08 16:48:17,763 - INFO - Binance Futures Testnet Client initialized
+2026-05-08 16:48:17,764 - INFO - Placing order | Symbol=BTCUSDT | Side=BUY | Type=MARKET | Qty=0.001 | Price=None
+2026-05-08 16:48:18,592 - ERROR - Binance API Error: APIError(code=-1021): Timestamp for this request was 1000ms ahead of the server's time.
+2026-05-08 16:48:18,618 - ERROR - CLI Error: APIError(code=-1021): Timestamp for this request was 1000ms ahead of the server's time.
+2026-05-08 16:50:28,555 - INFO - Binance Futures Testnet Client initialized
+2026-05-08 16:50:28,556 - INFO - Placing order | Symbol=BTCUSDT | Side=BUY | Type=MARKET | Qty=0.001 | Price=None
+2026-05-08 16:50:29,805 - INFO - Order Response: {'orderId': 13120517762, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ11a65a1a75f58807154516', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1778239229722}
+2026-05-08 16:50:29,807 - INFO - Order placed successfully
+2026-05-08 16:53:32,169 - INFO - Binance Futures Testnet Client initialized
+2026-05-08 16:53:32,169 - INFO - Placing order | Symbol=BTCUSDT | Side=BUY | Type=MARKET | Qty=0.001 | Price=None
+2026-05-08 16:53:33,095 - INFO - Order Response: {'orderId': 13120524305, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ6e475e055913d2424f91b0', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1778239412998}
+2026-05-08 16:53:33,099 - INFO - Order placed successfully
+2026-05-08 17:10:34,934 - INFO - Binance Futures Testnet Client initialized
+2026-05-08 17:10:34,935 - INFO - Placing order | Symbol=BTCUSDT | Side=SELL | Type=MARKET | Qty=0.001 | Price=None
+2026-05-08 17:10:37,857 - INFO - Order Response: {'orderId': 13120560683, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ8302d8d0ffd0089b7b1ff8', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1778240437712}
+2026-05-08 17:10:37,861 - INFO - Order placed successfully
