@@ -19,14 +19,7 @@ class BinanceFuturesClient:
             logger.error(f"Failed to initialize client: {e}")
             raise
 
-    def place_order(
-        self,
-        symbol,
-        side,
-        order_type,
-        quantity,
-        price=None
-    ):
+    def place_order(self, symbol, side, order_type, quantity, price=None):
 
         try:
 
@@ -43,7 +36,7 @@ class BinanceFuturesClient:
                 "symbol": symbol,
                 "side": side,
                 "type": order_type,
-                "quantity": quantity
+                "quantity": quantity,
             }
 
             if order_type == "LIMIT":

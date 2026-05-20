@@ -38,3 +38,4 @@
 2026-05-08 17:52:05,895 - INFO - Placing order | Symbol=BTCUSDT | Side=SELL | Type=LIMIT | Qty=0.001 | Price=80000.0
 2026-05-08 17:52:07,080 - INFO - Order Response: {'orderId': 13120651576, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-Cb7ytekJ5fd273663d69302cdfc489', 'price': '80000.00', 'avgPrice': '0.00', 'origQty': '0.0010', 'executedQty': '0.0000', 'cumQty': '0.0000', 'cumQuote': '0.000000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1778242927033}
 2026-05-08 17:52:07,086 - INFO - Order placed successfully
+2026-05-20 15:17:13,267 - ERROR - CLI Error: validate_price() takes 1 positional argument but 2 were given

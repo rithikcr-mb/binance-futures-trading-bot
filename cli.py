@@ -4,6 +4,10 @@ from dotenv import load_dotenv
 
 import questionary
 
+from rich.traceback import install
+
+install(show_locals=False)
+
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
@@ -13,7 +17,7 @@ from bot.validators import (
     validate_side,
     validate_order_type,
     validate_quantity,
-    validate_price
+    validate_price,
 )
 
 from bot.logging_config import logger
@@ -27,6 +31,10 @@ load_dotenv()
 API_KEY = os.getenv("BINANCE_API_KEY")
 API_SECRET = os.getenv("BINANCE_API_SECRET")
 
+if not API_KEY or not API_SECRET:
+    console.print("[bold red]Missing Binance API credentials in .env file[/bold red]")
+    raise SystemExit(1)
+
 
 def main():
 
@@ -35,44 +43,33 @@ def main():
         console.print(
             Panel.fit(
                 "[bold cyan]BINANCE FUTURES TESTNET BOT[/bold cyan]",
-                border_style="green"
+                border_style="green",
             )
         )
 
         # User Inputs
 
-        symbol = questionary.text(
-            "Enter Symbol:",
-            default="BTCUSDT"
-        ).ask()
+        symbol = questionary.text("Enter Symbol:", default="BTCUSDT").ask()
 
-        side = questionary.select(
-            "Choose Side:",
-            choices=["BUY", "SELL"]
-        ).ask()
+        side = questionary.select("Choose Side:", choices=["BUY", "SELL"]).ask()
 
         order_type = questionary.select(
-            "Choose Order Type:",
-            choices=["MARKET", "LIMIT"]
+            "Choose Order Type:", choices=["MARKET", "LIMIT"]
         ).ask()
 
-        quantity = questionary.text(
-            "Enter Quantity:",
-            default="0.001"
-        ).ask()
+        quantity = questionary.text("Enter Quantity:", default="0.001").ask()
 
         price = None
 
         if order_type == "LIMIT":
 
-            price = questionary.text(
-                "Enter Limit Price:",
-                default="50000"
-            ).ask()
+            price = questionary.text("Enter Limit Price:", default="50000").ask()
 
         # Validations
 
-        symbol = symbol.upper()
+        from bot.validators import validate_symbol
+
+        symbol = validate_symbol(symbol)
 
         side = validate_side(side)
 
@@ -80,14 +77,13 @@ def main():
 
         quantity = validate_quantity(quantity)
 
-        price = validate_price(price, order_type)
+        if price is not None:
+            price = validate_price(price)
 
         # Request Table
 
         request_table = Table(
-            title="Order Request",
-            show_header=True,
-            header_style="bold magenta"
+            title="Order Request", show_header=True, header_style="bold magenta"
         )
 
         request_table.add_column("Field")
@@ -106,15 +102,12 @@ def main():
         # Confirm Order
 
         confirm = questionary.confirm(
-            "Do you want to place this order?",
-            default=True
+            "Do you want to place this order?", default=True
         ).ask()
 
         if not confirm:
 
-            console.print(
-                "\n[yellow]Order cancelled by user.[/yellow]"
-            )
+            console.print("\n[yellow]Order cancelled by user.[/yellow]")
 
             return
 
@@ -131,46 +124,32 @@ def main():
                 side=side,
                 order_type=order_type,
                 quantity=quantity,
-                price=price
+                price=price,
             )
 
         # Response Table
 
         response_table = Table(
-            title="Order Response",
-            show_header=True,
-            header_style="bold green"
+            title="Order Response", show_header=True, header_style="bold green"
         )
 
         response_table.add_column("Field")
         response_table.add_column("Value")
 
-        response_table.add_row(
-            "Order ID",
-            str(response.get("orderId"))
-        )
+        response_table.add_row("Order ID", str(response.get("orderId")))
 
-        response_table.add_row(
-            "Status",
-            str(response.get("status"))
-        )
+        response_table.add_row("Status", str(response.get("status")))
 
-        response_table.add_row(
-            "Executed Quantity",
-            str(response.get("executedQty"))
-        )
+        response_table.add_row("Executed Quantity", str(response.get("executedQty")))
 
-        response_table.add_row(
-            "Average Price",
-            str(response.get("avgPrice"))
-        )
+        response_table.add_row("Average Price", str(response.get("avgPrice")))
 
         console.print(response_table)
 
         console.print(
             Panel.fit(
-                "[bold green]SUCCESS: Order placed successfully[/bold green]",
-                border_style="green"
+                "[bold green]Order placed successfully[/bold green]",
+                border_style="green",
             )
         )
 
@@ -178,15 +157,17 @@ def main():
 
     except Exception as e:
 
-        console.print(
-            Panel.fit(
-                f"[bold red]ERROR:[/bold red] {e}",
-                border_style="red"
-            )
-        )
+        console.print(Panel.fit(f"[bold red]ERROR:[/bold red] {e}", border_style="red"))
 
         logger.error(f"CLI Error: {e}")
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+
+    except KeyboardInterrupt:
+        console.print("\n[yellow]Application interrupted by user.[/yellow]")
+
+    except Exception as e:
+        console.print(f"[bold red]Unexpected Error:[/bold red] {e}")
